@@ -1,0 +1,5 @@
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+.card { border-radius: 20px; }
+.btn-success { border-radius: 30px; padding-left: 40px; padding-right: 40px; }
+h1 { font-weight: 700; color: #2c3e50; }
+.alert { border-radius: 12px; }

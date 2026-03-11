@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="card p-4 shadow-lg border-0">
+            <div class="row">
+                <div class="col-md-5 text-center border-end">
+                    <img src="{{ img }}" class="img-fluid rounded mb-3" style="max-height: 350px;">
+                    <h2 class="text-success">{{ label }}</h2>
+                    <span class="badge bg-dark">Confidence: {{ conf }}%</span>
+                    <div class="mt-4"><a href="/" class="btn btn-outline-secondary">Analyze New Food</a></div>
+                </div>
+                <div class="col-md-7 ps-4">
+                    <h4 class="mb-4">Health & Nutritional Report</h4>
+                    <div class="row mb-3">
+                        <div class="col-6">🔥 <strong>Calories:</strong> {{ data.nutrients.calories }} kcal</div>
+                        <div class="col-6">💪 <strong>Protein:</strong> {{ data.nutrients.protein }}g</div>
+                        <div class="col-6">🍚 <strong>Carbohydrates:</strong> {{ data.nutrients.carbs }}g</div>
+                        <div class="col-6">🧀 <strong>Fats:</strong> {{ data.nutrients.fats }}g</div>
+                    </div>
+                    <div class="alert alert-info"><strong>🥣 Recommended Serve:</strong><br>{{ data.serving }}</div>
+                    <div class="alert alert-light border"><strong>🕒 Best Time to Eat:</strong><br>{{ data.best_time }}</div>
+                    <div class="alert alert-light border"><strong>🚫 Avoid During:</strong><br>{{ data.avoid_time }}</div>
+                    <div class="alert alert-danger"><strong>⚠️ Who should avoid:</strong><br>{{ data.avoid_who }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
